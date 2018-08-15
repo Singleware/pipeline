@@ -19,7 +19,7 @@ export class Subject<T> extends Observable.Subject<T> {
   public notifyFirstSync(value: T): Subject<T> {
     const observer = this.observers.shift();
     if (observer) {
-      Class.call(observer, value);
+      observer(value);
     }
     return this;
   }
@@ -33,7 +33,7 @@ export class Subject<T> extends Observable.Subject<T> {
   public async notifyFirst(value: T): Promise<Subject<T>> {
     const observer = this.observers.shift();
     if (observer) {
-      await Class.call(observer, value);
+      await observer(value);
     }
     return this;
   }
@@ -47,7 +47,7 @@ export class Subject<T> extends Observable.Subject<T> {
   public notifyLastSync(value: T): Subject<T> {
     const observer = this.observers.pop();
     if (observer) {
-      Class.call(observer, value);
+      observer(value);
     }
     return this;
   }
@@ -61,7 +61,7 @@ export class Subject<T> extends Observable.Subject<T> {
   public async notifyLast(value: T): Promise<Subject<T>> {
     const observer = this.observers.pop();
     if (observer) {
-      await Class.call(observer, value);
+      await observer(value);
     }
     return this;
   }

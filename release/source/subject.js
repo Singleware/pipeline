@@ -24,7 +24,7 @@ let Subject = class Subject extends Observable.Subject {
     notifyFirstSync(value) {
         const observer = this.observers.shift();
         if (observer) {
-            Class.call(observer, value);
+            observer(value);
         }
         return this;
     }
@@ -36,7 +36,7 @@ let Subject = class Subject extends Observable.Subject {
     async notifyFirst(value) {
         const observer = this.observers.shift();
         if (observer) {
-            await Class.call(observer, value);
+            await observer(value);
         }
         return this;
     }
@@ -48,7 +48,7 @@ let Subject = class Subject extends Observable.Subject {
     notifyLastSync(value) {
         const observer = this.observers.pop();
         if (observer) {
-            Class.call(observer, value);
+            observer(value);
         }
         return this;
     }
@@ -60,7 +60,7 @@ let Subject = class Subject extends Observable.Subject {
     async notifyLast(value) {
         const observer = this.observers.pop();
         if (observer) {
-            await Class.call(observer, value);
+            await observer(value);
         }
         return this;
     }
