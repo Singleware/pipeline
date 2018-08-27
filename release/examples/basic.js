@@ -16,14 +16,15 @@ const tickEvents = new Pipeline.Subject();
  * Subscribe the first observer.
  */
 tickEvents.subscribe((count) => {
-    console.log('Tick A: ', count);
+    console.log(`Tick A: ${count}`);
 });
 /**
  * Subscribe the second observer.
  */
 tickEvents.subscribe((count) => {
-    console.log('Tick B: ', count);
+    console.log(`Tick B: ${count}`);
 });
+console.log(`Notify all: ${tickEvents.length}`);
 for (let i = 0; tickEvents.length; ++i) {
     tickEvents.notifyFirst(i);
 }

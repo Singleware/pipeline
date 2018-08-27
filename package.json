@@ -7,7 +7,7 @@
   "name": "@singleware/pipeline",
   "description": "Singleware generic pipeline class.",
   "license": "MIT",
-  "version": "1.0.11",
+  "version": "1.0.16",
   "main": "release/source/index.js",
   "types": "release/types/index.d.ts",
   "keywords": [
@@ -26,8 +26,8 @@
     "node": ">=8"
   },
   "dependencies": {
-    "@singleware/class": "^1.1.3",
-    "@singleware/observable": "^1.0.13"
+    "@singleware/class": "^1.1.9",
+    "@singleware/observable": "^1.0.19"
   },
   "devDependencies": {
     "prettier": "^1.14.2",
